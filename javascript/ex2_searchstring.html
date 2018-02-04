@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<center>
+	<h1>
+		Ex2 - Sreach String Non Sensitive Case
+	</h1>
+	<body>
+		Text Input: 
+		<textarea id="comp_in"></textarea>
+		<br>
+		<br>
+	Sensitive Case : 
+		<input type="radio" id="yes" name="rad1"> Yes
+		<input type="radio" id="no" name="rad1"> No
+		<br><br>
+		Sreach : <input id="comp_s">
+		<br><br>
+		<button type="button" onclick="myFunction()">search</button>
+		<br>
+		<br>
+		Result for Search : <div id="demo"></div>
+
+		<script>
+		function myFunction() {
+			var i = 0;
+			var count = 0;
+			var x = document.getElementById("comp_in").value;
+			var y = document.getElementById("comp_s").value;
+			
+			if(document.getElementById("yes").checked){
+				var comp = x.split(" ");
+				while(comp[i] != null){
+					if(y==comp[i]){
+						count++;
+					}
+					i++;
+				}
+				document.getElementById("demo").innerHTML = count;
+			}
+			else{
+				var res1 = x.toLowerCase();
+				var res2 = y.toLowerCase();
+				var comp = res1.split(" ");
+				while(comp[i] != null){
+					if(res2==comp[i]){
+						count++;
+					}
+					i++;
+				}
+				document.getElementById("demo").innerHTML = count;
+			}
+		}
+		</script>
+
+	</body>
+</center>
+</html>
