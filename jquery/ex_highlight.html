@@ -1,47 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
-<script type="text/javascript">
-	 $( document ).ready(function() {
-            $("#go").click(function(){
-               var research = $("#in_word").val();
-               var highlight = {
-                    "mark": function(counT){
-                        $("#count").html("found : "+ counT +" word");
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+    <script type="text/javascript">
+        
+        $( document ).ready(function() {
+            $("#search").click(function(){
+               var text = $("#input").val();
+               var num = {
+                    "done": function(counT){
+                        $("#count").html(counT +" word");
                     }
                 };
-                $("#doc").unmark();
-                $("#doc").mark(research, highlight);
+                $("#word").unmark();
+                $("#word").mark(text, num);
             });
         });
-</script>
+       
+    </script>
 </head>
 <body>
-<center>
-<h2>Ex - Highlight Text</h2><hr>
-
-		Search : <input type = "text" id = "in_word">
-		<br><br>
-		<button id = "go">search</button>
-		<br><br>
-		<p id = "count"></p>
-</center>
-		<fieldset>
-		<legend>The Article : Continuous Digital Health</legend>
-		
-		<a id = "doc">The way we deal with our health is undergoing a major transformation,
-		not only because mobile Internet technology has made it possible to have continuous access to personal health information,
-		but also because breaking the trend of ever-growing healthcare costs is increasingly necessary. 
-		Estimates indicate that more than 70 percent of the world population will have a smartphone by 2017. 
-		Connectivity, interoperability, sensing, and instant feedback through smartphones all provide new opportunities
-		for gaining insights into our health behavior. Such insights are improving, and understanding what motivates people
-		to make healthy changes throughout their lifetimes is becoming more important. Internet technology not only lets us continuously
-		monitor an individual's physiological and psychological state, but also allows for building up a lifelong record of physical,
-		mental, and social health.</a>
-		
-		</fieldset>	
-
+    <center> 
+        <h2 id="head">Ex - Highlight Text</h2>
+        <hr>
+        Search: <input type="text" id="input"><br><br>
+        <button id="search">search</button><br><br>
+        <span id="count"></span><br><br>
+    </center>
+    <fieldset>
+            <legend><h3>The Article : Continuous Digital Health</h3></legend>
+                <div id="word">The way we deal with our health is undergoing a major transformation, not only because mobile Internet technology has made it possible to have continuous access to personal health information, but also because breaking the trend of ever-growing healthcare
+        costs is increasingly necessary. Estimates indicate that more than 70 percent of the world population will have a smartphone by 2017. Connectivity, interoperability, sensing, and instant feedback through smartphones all provide new opportunities
+        for gaining insights into our health behavior. Such insights are improving, and understanding what motivates people to make healthy changes throughout their lifetimes is becoming more important. Internet technology not only lets us continuously
+        monitor an individual's physiological and psychological state, but also allows for building up a lifelong record of physical, mental, and social health.</div>
+           <br></fieldset>
+          
 </body>
 </html>
