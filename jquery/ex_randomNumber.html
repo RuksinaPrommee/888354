@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+
+	$( document ).ready(function(){
+		var first = 0;
+		var second = 0; 
+		var res = 0;
+		var ans = 0;	
+		$("#rnd_num").click(function(){
+			first = Math.floor(Math.random() * 999) + 0;
+			second = Math.floor(Math.random() * 999) + 0;
+			
+			$("#show").html(first+" + "+second +" = ");
+			res = first + second;
+		});
+		$("#send").click(function(){
+			ans1 = $("#ans").val();
+			if(ans1 == res){
+				$("#result").html("<span style='color:green;'>That's correct.</span>");
+				}
+			else
+				$("#result").html("<span style='color:red;'>That's Wrong.</span>");
+		});
+	});
+</script>
+</head>
+<body>
+<center>
+	<h2>Ex - Random Number for Answer</h2><hr>
+	<button type="button" id="rnd_num" >Random Number</button>
+	<br><br>
+	<span id="show"></span><input type="text" id="ans">
+	<br><br>
+	<button type="button" id="send">Send Answer</button>
+	<br><br>
+	<div id="result"></div>
+</body>
+</center>
+</html>
